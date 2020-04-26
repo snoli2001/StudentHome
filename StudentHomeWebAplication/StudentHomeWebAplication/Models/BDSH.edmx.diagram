@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2851aaa48914412993cfe3a24618f9fe" Name="Diagram1">
+        <EntityTypeShape EntityType="BDSHModel.Cleanliness" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Department" Width="1.5" PointX="7.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.District" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.GetUp" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.GoToBed" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.House" Width="1.5" PointX="10.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Landlord" Width="1.5" PointX="15" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.LifeStyle" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Pet" Width="1.5" PointX="8.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Priority" Width="1.5" PointX="10.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Property" Width="1.5" PointX="12.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Province" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Region" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Room" Width="1.5" PointX="18" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Service" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.Student" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDSHModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BDSHModel.FK_LifeStyle_Cleanliness" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Department_District" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Department_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Department_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Department_Region1" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Department_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Property_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_District_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_House_District" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Landlord_District" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Room_District" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_District" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_LifeStyle_GetUp" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_LifeStyle_GoToBed" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_House_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_House_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Property_House" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Landlord_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Landlord_Property" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Landlord_Property1" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Landlord_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_LifeStyle" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_Pet" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Property_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Property_Priority1" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Property_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Room_Property" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Province_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Room_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Room_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="BDSHModel.FK_Student_Region" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

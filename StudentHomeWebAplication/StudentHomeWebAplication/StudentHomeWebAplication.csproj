@@ -1,0 +1,1952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D179A6C-E2C4-4722-886A-16153708CC28}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentHomeWebAplication</RootNamespace>
+    <AssemblyName>StudentHomeWebAplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\StudentHomeWebAplication.dll" />
+    <Content Include="bin\StudentHomeWebAplication.pdb" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\BDSH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDSH.edmx</DependentUpon>
+      <LastGenOutput>BDSH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BDSH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDSH.edmx</DependentUpon>
+      <LastGenOutput>BDSH.cs</LastGenOutput>
+    </Content>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Temas\Simply_white\css\dashboard.widgets.css" />
+    <Content Include="Temas\Simply_white\css\style.css" />
+    <Content Include="Temas\Simply_white\css\style.min.css" />
+    <Content Include="Temas\Simply_white\img\dashboard\pages_hero.jpg" />
+    <Content Include="Temas\Simply_white\img\demo\1.svg" />
+    <Content Include="Temas\Simply_white\img\demo\2.svg" />
+    <Content Include="Temas\Simply_white\img\demo\3.svg" />
+    <Content Include="Temas\Simply_white\img\demo\3_9.svg" />
+    <Content Include="Temas\Simply_white\img\demo\4.svg" />
+    <Content Include="Temas\Simply_white\img\demo\6_6.svg" />
+    <Content Include="Temas\Simply_white\img\demo\9_3.svg" />
+    <Content Include="Temas\Simply_white\img\demo\add_more.svg" />
+    <Content Include="Temas\Simply_white\img\demo\blank.svg" />
+    <Content Include="Temas\Simply_white\img\demo\buttons_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\calendar_app.svg" />
+    <Content Include="Temas\Simply_white\img\demo\colors_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\determinate_bar.gif" />
+    <Content Include="Temas\Simply_white\img\demo\determinate_circle.gif" />
+    <Content Include="Temas\Simply_white\img\demo\email_app.svg" />
+    <Content Include="Temas\Simply_white\img\demo\form_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\full_header.png" />
+    <Content Include="Temas\Simply_white\img\demo\full_header.svg" />
+    <Content Include="Temas\Simply_white\img\demo\full_header_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\full_header_con.png" />
+    <Content Include="Temas\Simply_white\img\demo\full_header_con.svg" />
+    <Content Include="Temas\Simply_white\img\demo\full_header_con_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\horizontal.png" />
+    <Content Include="Temas\Simply_white\img\demo\horizontal_2x copy.png" />
+    <Content Include="Temas\Simply_white\img\demo\horizontal_secondary.png" />
+    <Content Include="Temas\Simply_white\img\demo\horizontal_secondary_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\icons_hero.png" />
+    <Content Include="Temas\Simply_white\img\demo\icons_hero2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\indeterminate_bar.gif" />
+    <Content Include="Temas\Simply_white\img\demo\indeterminate_circle.gif" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided.png" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided.svg" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided_con.png" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided_con.svg" />
+    <Content Include="Temas\Simply_white\img\demo\menu_divided_con_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\modal.gif" />
+    <Content Include="Temas\Simply_white\img\demo\modal_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\nest.png" />
+    <Content Include="Temas\Simply_white\img\demo\new-york-city-buildings-sunrise-morning-hd-wallpaper.jpg" />
+    <Content Include="Temas\Simply_white\img\demo\notifications_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\pages_icon.png" />
+    <Content Include="Temas\Simply_white\img\demo\pages_icon_2x.png" />
+    <Content Include="Temas\Simply_white\img\demo\paralax_cover.gif" />
+    <Content Include="Temas\Simply_white\img\demo\paralax_full.gif" />
+    <Content Include="Temas\Simply_white\img\demo\paralax_title.gif" />
+    <Content Include="Temas\Simply_white\img\demo\progress.svg" />
+    <Content Include="Temas\Simply_white\img\demo\project_pages.png" />
+    <Content Include="Temas\Simply_white\img\demo\slider_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\social_app.svg" />
+    <Content Include="Temas\Simply_white\img\demo\tab.png" />
+    <Content Include="Temas\Simply_white\img\demo\tables.jpg" />
+    <Content Include="Temas\Simply_white\img\demo\theme_abstract.png" />
+    <Content Include="Temas\Simply_white\img\demo\theme_corporate.png" />
+    <Content Include="Temas\Simply_white\img\demo\theme_default.png" />
+    <Content Include="Temas\Simply_white\img\demo\theme_retro.png" />
+    <Content Include="Temas\Simply_white\img\demo\theme_unlax.png" />
+    <Content Include="Temas\Simply_white\img\demo\theme_vibes.png" />
+    <Content Include="Temas\Simply_white\img\demo\tick.svg" />
+    <Content Include="Temas\Simply_white\img\demo\typography_hero.gif" />
+    <Content Include="Temas\Simply_white\img\demo\typo_font_preview.svg" />
+    <Content Include="Temas\Simply_white\img\demo\views_animation.gif" />
+    <Content Include="Temas\Simply_white\img\form-wizard\amex.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\amex2x.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\cirrus.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\cirrus2x.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\maestro.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\maestro2x.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\mastercard.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\mastercard2x.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\visa.png" />
+    <Content Include="Temas\Simply_white\img\form-wizard\visa2x.png" />
+    <Content Include="Temas\Simply_white\img\gallery\1.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\10.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\11.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\12.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\13.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\14.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\2.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\2_1.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\2_2.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\3.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\4.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\5.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\6.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\7.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\8.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\9.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\cover.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\item-square.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\thumb-1.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\thumb-2.jpg" />
+    <Content Include="Temas\Simply_white\img\gallery\thumb-3.jpg" />
+    <Content Include="Temas\Simply_white\img\invoice\doc.png" />
+    <Content Include="Temas\Simply_white\img\invoice\doc2x.png" />
+    <Content Include="Temas\Simply_white\img\invoice\image.png" />
+    <Content Include="Temas\Simply_white\img\invoice\image2x.png" />
+    <Content Include="Temas\Simply_white\img\invoice\pdf.png" />
+    <Content Include="Temas\Simply_white\img\invoice\pdf2x.png" />
+    <Content Include="Temas\Simply_white\img\invoice\signature.png" />
+    <Content Include="Temas\Simply_white\img\invoice\signature2x.png" />
+    <Content Include="Temas\Simply_white\img\invoice\squarespace.png" />
+    <Content Include="Temas\Simply_white\img\invoice\squarespace2x.png" />
+    <Content Include="Temas\Simply_white\img\logo.png" />
+    <Content Include="Temas\Simply_white\img\logo_2x.png" />
+    <Content Include="Temas\Simply_white\img\logo_white.png" />
+    <Content Include="Temas\Simply_white\img\logo_white_2x.png" />
+    <Content Include="Temas\Simply_white\img\maps\dashboard-map-dotted.png" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-complete.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-danger.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-master.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-primary.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-success.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-alt-warning.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-complete.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-danger.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-master.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-primary.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-success.svg" />
+    <Content Include="Temas\Simply_white\img\maps\marker-warning.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pages-map.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-complete.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-danger.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-master.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-primary.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-success.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-alt-warning.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-complete.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-danger.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-master.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-primary.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-success.svg" />
+    <Content Include="Temas\Simply_white\img\maps\pulse-warning.svg" />
+    <Content Include="Temas\Simply_white\img\maps\us-small.jpg" />
+    <Content Include="Temas\Simply_white\img\notifications\bounce_progress.svg" />
+    <Content Include="Temas\Simply_white\img\notifications\circle_progress.svg" />
+    <Content Include="Temas\Simply_white\img\notifications\loading_bar.svg" />
+    <Content Include="Temas\Simply_white\img\notifications\simple_alert.svg" />
+    <Content Include="Temas\Simply_white\img\profiles\1.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\1.png" />
+    <Content Include="Temas\Simply_white\img\profiles\1x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\2.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\2.png" />
+    <Content Include="Temas\Simply_white\img\profiles\2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\3.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\3.png" />
+    <Content Include="Temas\Simply_white\img\profiles\3x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\4.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\4x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\5.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\5x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\6.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\6x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\7.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\7x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\8.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\8x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\9.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\9x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\a.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\a2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\avatar.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\avatar2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\avatar_small.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\avatar_small2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\b.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\b2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\ba.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\ba2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bb.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bb2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bc.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bc2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bd.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\bd2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\be.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\be2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\c.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\c2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\d.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\d2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\e.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\e2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\f.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\f2x.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\h.jpg" />
+    <Content Include="Temas\Simply_white\img\profiles\h2x.jpg" />
+    <Content Include="Temas\Simply_white\img\social-post-image.png" />
+    <Content Include="Temas\Simply_white\img\social\cover.jpg" />
+    <Content Include="Temas\Simply_white\img\social\person-1.jpg" />
+    <Content Include="Temas\Simply_white\img\social\person-2.jpg" />
+    <Content Include="Temas\Simply_white\img\social\person-cropped.jpg" />
+    <Content Include="Temas\Simply_white\img\social\quote.jpg" />
+    <Content Include="Temas\Simply_white\img\social_new.jpg" />
+    <Content Include="Temas\Simply_white\img\widget-hero.png" />
+    <Content Include="Temas\Simply_white\img\wm-logo.svg" />
+    <Content Include="Temas\Simply_white\js\bootgrid.js" />
+    <Content Include="Temas\Simply_white\js\calendar.js" />
+    <Content Include="Temas\Simply_white\js\calendar_lang.js" />
+    <Content Include="Temas\Simply_white\js\calendar_lazy.js" />
+    <Content Include="Temas\Simply_white\js\calendar_month.js" />
+    <Content Include="Temas\Simply_white\js\card.js" />
+    <Content Include="Temas\Simply_white\js\charts.js" />
+    <Content Include="Temas\Simply_white\js\dashboard.js" />
+    <Content Include="Temas\Simply_white\js\datatables.js" />
+    <Content Include="Temas\Simply_white\js\demo.js" />
+    <Content Include="Temas\Simply_white\js\form_elements.js" />
+    <Content Include="Temas\Simply_white\js\form_layouts.js" />
+    <Content Include="Temas\Simply_white\js\form_wizard.js" />
+    <Content Include="Temas\Simply_white\js\gallery.js" />
+    <Content Include="Temas\Simply_white\js\google_map.js" />
+    <Content Include="Temas\Simply_white\js\icon.js" />
+    <Content Include="Temas\Simply_white\js\nestables.js" />
+    <Content Include="Temas\Simply_white\js\notifications.js" />
+    <Content Include="Temas\Simply_white\js\scripts.js" />
+    <Content Include="Temas\Simply_white\js\slider.js" />
+    <Content Include="Temas\Simply_white\js\tables.js" />
+    <Content Include="Temas\Simply_white\js\timeline.js" />
+    <Content Include="Temas\Simply_white\js\tree_view.js" />
+    <Content Include="Temas\Simply_white\js\vector_map.js" />
+    <Content Include="Temas\Simply_white\js\widgets.js" />
+    <Content Include="Temas\Simply_white\ownImages\Android_SinFondo.png" />
+    <Content Include="Temas\Simply_white\ownImages\BULLS LOGO.png" />
+    <Content Include="Temas\Simply_white\ownImages\depa1.jpg" />
+    <Content Include="Temas\Simply_white\ownImages\depa2.jpg" />
+    <Content Include="Temas\Simply_white\ownImages\logo AP2_SinFondo.png" />
+    <Content Include="Temas\Simply_white\ownImages\StudentImage.jpg" />
+    <Content Include="Temas\Simply_white\ownImages\StudentImageFondo.jpg" />
+    <Content Include="Temas\Simply_white\pages\css\editor.css" />
+    <Content Include="Temas\Simply_white\pages\css\pages-icons.css" />
+    <Content Include="Temas\Simply_white\pages\css\pages.css" />
+    <Content Include="Temas\Simply_white\pages\css\pages.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\pages.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\pages.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\abstract.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\abstract.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\abstract.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\abstract.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\calendar.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\calendar.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\calendar.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\calendar.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\corporate.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\corporate.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\corporate.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\corporate.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\light.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\light.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\light.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\light.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\modern.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\modern.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\modern.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\modern.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\retro.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\retro.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\retro.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\retro.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\simple.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\simple.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\simple.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\simple.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\unlax.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\unlax.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\unlax.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\unlax.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\vibes.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\vibes.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\vibes.rtl.css" />
+    <Content Include="Temas\Simply_white\pages\css\themes\vibes.rtl.min.css" />
+    <Content Include="Temas\Simply_white\pages\css\widget-market.css" />
+    <Content Include="Temas\Simply_white\pages\css\windows.chrome.fix.css" />
+    <Content Include="Temas\Simply_white\pages\fonts\montserrat\montserrat-bold-webfont.svg" />
+    <Content Include="Temas\Simply_white\pages\fonts\montserrat\montserrat-regular-webfont.svg" />
+    <Content Include="Temas\Simply_white\pages\fonts\pages-icon\Pages-icon.svg" />
+    <Content Include="Temas\Simply_white\pages\ico\120.png" />
+    <Content Include="Temas\Simply_white\pages\ico\152.png" />
+    <Content Include="Temas\Simply_white\pages\ico\60.png" />
+    <Content Include="Temas\Simply_white\pages\ico\76.png" />
+    <Content Include="Temas\Simply_white\pages\img\editor_tray.png" />
+    <Content Include="Temas\Simply_white\pages\img\editor_tray_2x.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\noti-cross-2x.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\noti-cross.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\sort_asc.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\sort_asc_disabled.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\sort_both.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\sort_desc.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\sort_desc_disabled.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\top_tray.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\top_tray_2x.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\top_tray_blueish.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\top_tray_blueish_2x.png" />
+    <Content Include="Temas\Simply_white\pages\img\icons\top_tray_bluish.png" />
+    <Content Include="Temas\Simply_white\pages\img\linear_gradient.png" />
+    <Content Include="Temas\Simply_white\pages\img\notes_lines.png" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-complete.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-danger.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-info.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-master.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-primary.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-success.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-bar-warning.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-complete.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-danger.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-info.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-lg-master-static.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-lg-master.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-lg-white-static.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-lg-white.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-master.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-primary.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-success.svg" />
+    <Content Include="Temas\Simply_white\pages\img\progress\progress-circle-warning.svg" />
+    <Content Include="Temas\Simply_white\pages\js\pages.calendar.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.calendar.min.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.email.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.min.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.social.js" />
+    <Content Include="Temas\Simply_white\pages\js\pages.social.min.js" />
+    <Content Include="Temas\Simply_white\plugins\alerts\sweet-alert.css" />
+    <Content Include="Temas\Simply_white\plugins\alerts\sweet-alert.js" />
+    <Content Include="Temas\Simply_white\plugins\alerts\sweet-alert.min.js" />
+    <Content Include="Temas\Simply_white\plugins\animate.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-checkbox\css\bootstrap-checkbox.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-checkbox\img\Tick.png" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-checkbox\js\bootstrap-checkbox.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-collapse\bootstrap-tabcollapse.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-form-wizard\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2-bootstrap.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2-spinner.gif" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2.png" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2x2.png" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ar.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_az.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_bg.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ca.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_cs.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_da.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_de.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_el.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_es.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_et.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_eu.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_fa.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_fi.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_fr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_gl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_he.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_hr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_hu.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_id.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_is.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_it.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ja.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ka.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ko.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_lt.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_lv.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_mk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ms.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_nl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_no.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_pl.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_pt-BR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_pt-PT.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ro.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_rs.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ru.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_sk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_sv.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_th.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_tr.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ua.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_ug-CN.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_uk.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_vi.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_zh-CN.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_zh-TW.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-tag\bootstrap-tagsinput.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-tag\bootstrap-tagsinput.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-tag\bootstrap-tagsinput.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-timepicker\bootstrap-timepicker.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-timepicker\bootstrap-timepicker.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-typehead\bloodhound.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-typehead\typeahead.bundle.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-typehead\typeahead.jquery.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\commands.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ar-AR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.bg-BG.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ca-CT.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.cs-CZ.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.da-DK.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.de-DE.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.el-GR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.en-US.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.es-AR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.es-ES.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.fr-FR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.hr-HR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.hu-HU.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.il-HE.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.it-IT.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ja-JP.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ko-KR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.lt-LT.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.mo-MD.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.nb-NB.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.nl-NL.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.pl-PL.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.pt-BR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ru-RU.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.sk-SK.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.sv-SE.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.tr-TR.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.ua-UA.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.zh-CN.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\locales\bootstrap-wysihtml5.zh-TW.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap3-wysihtml5\templates.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Temas\Simply_white\plugins\classie\classie.js" />
+    <Content Include="Temas\Simply_white\plugins\codrops-dialogFx\dialog-sandra.css" />
+    <Content Include="Temas\Simply_white\plugins\codrops-dialogFx\dialog.css" />
+    <Content Include="Temas\Simply_white\plugins\codrops-dialogFx\dialog.ie.css" />
+    <Content Include="Temas\Simply_white\plugins\codrops-dialogFx\dialogFx.js" />
+    <Content Include="Temas\Simply_white\plugins\codrops-stepsform\css\component.css" />
+    <Content Include="Temas\Simply_white\plugins\codrops-stepsform\js\classie.js" />
+    <Content Include="Temas\Simply_white\plugins\codrops-stepsform\js\stepsForm.js" />
+    <Content Include="Temas\Simply_white\plugins\codrops-stepsform\README.txt" />
+    <Content Include="Temas\Simply_white\plugins\d3\d3.min.js" />
+    <Content Include="Temas\Simply_white\plugins\datatables-responsive\css\datatables.responsive.css" />
+    <Content Include="Temas\Simply_white\plugins\datatables-responsive\img\minus.png" />
+    <Content Include="Temas\Simply_white\plugins\datatables-responsive\img\plus.png" />
+    <Content Include="Temas\Simply_white\plugins\datatables-responsive\js\datatables.responsive.js" />
+    <Content Include="Temas\Simply_white\plugins\datatables-responsive\js\lodash.min.js" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\css\basic.css" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\css\dropzone.css" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\dropzone-amd-module.js" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\dropzone.js" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\dropzone.min.js" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\new\back\spritemap%402x.png" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\new\back\spritemap.png" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\new\spritemap%402x.png" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\new\spritemap.png" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\spritemap%402x.png" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\spritemap.png" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\feather.js" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\feather.min.js" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\activity.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\airplay.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\alert-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\alert-octagon.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\alert-triangle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\align-center.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\align-justify.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\align-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\align-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\anchor.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\aperture.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-down-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-down-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-up-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-up-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\arrow-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\at-sign.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\award.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bar-chart-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bar-chart.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\battery-charging.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\battery.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bell-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bell.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bluetooth.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\book.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\bookmark.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\box.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\briefcase.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\calendar.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\camera-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\camera.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cast.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\check-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\check-square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\check.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevron-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevron-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevron-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevron-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevrons-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevrons-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevrons-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chevrons-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\chrome.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\clipboard.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\clock.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud-drizzle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud-lightning.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud-rain.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud-snow.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cloud.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\codepen.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\command.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\compass.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\copy.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-down-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-down-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-left-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-left-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-right-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-right-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-up-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\corner-up-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\cpu.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\credit-card.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\crosshair.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\delete.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\disc.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\download-cloud.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\download.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\droplet.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\edit-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\edit-3.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\edit.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\external-link.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\eye-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\eye.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\facebook.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\fast-forward.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\feather.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\file-minus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\file-plus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\file-text.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\file.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\film.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\filter.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\flag.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\folder.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\github.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\globe.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\grid.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\hash.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\headphones.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\heart.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\home.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\image.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\inbox.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\info.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\instagram.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\layers.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\layout.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\life-buoy.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\link-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\link.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\list.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\loader.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\lock.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\log-in.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\log-out.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\mail.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\map-pin.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\map.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\maximize-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\maximize.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\menu.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\message-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\message-square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\mic-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\mic.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\minimize-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\minimize.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\minus-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\minus-square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\minus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\monitor.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\moon.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\more-horizontal.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\more-vertical.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\move.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\music.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\navigation-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\navigation.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\octagon.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\package.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\pause-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\pause.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\percent.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-call.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-forwarded.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-incoming.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-missed.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone-outgoing.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\phone.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\pie-chart.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\play-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\play.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\plus-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\plus-square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\plus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\pocket.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\power.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\printer.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\radio.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\refresh-ccw.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\refresh-cw.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\repeat.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\rewind.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\rotate-ccw.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\rotate-cw.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\save.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\scissors.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\search.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\server.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\settings.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\share-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\share.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\shield.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\shuffle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\sidebar.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\skip-back.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\skip-forward.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\slack.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\slash.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\smartphone.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\speaker.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\star.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\stop-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\sun.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\sunrise.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\sunset.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\tablet.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\tag.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\target.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\thermometer.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\thumbs-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\thumbs-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\toggle-left.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\toggle-right.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\trash-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\trash.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\trending-down.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\trending-up.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\triangle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\twitter.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\type.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\umbrella.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\unlock.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\upload-cloud.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\upload.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\user-check.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\user-minus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\user-plus.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\user-x.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\user.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\users.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\video-off.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\video.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\voicemail.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\volume-1.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\volume-2.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\volume-x.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\volume.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\watch.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\wifi.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\wind.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\x-circle.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\x-square.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\x.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\zap.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\zoom-in.svg" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons\zoom-out.svg" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Temas\Simply_white\plugins\hammer.min.js" />
+    <Content Include="Temas\Simply_white\plugins\handlebars\handlebars-v4.0.5.js" />
+    <Content Include="Temas\Simply_white\plugins\highlight\highlight.pack.js" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\arta.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\ascetic.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-dune.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-dune.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-forest.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-forest.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-heath.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-heath.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-lakeside.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-lakeside.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-seaside.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\atelier-seaside.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\brown_paper.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\brown_papersq.png" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\codepen-embed.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\color-brewer.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\default.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\docco.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\far.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\foundation.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\github.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\googlecode.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\hybrid.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\idea.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\ir_black.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\kimbie.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\kimbie.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\magula.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\mono-blue.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\monokai.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\monokai_sublime.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\obsidian.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\paraiso.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\paraiso.light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\pojoaque.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\pojoaque.jpg" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\railscasts.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\rainbow.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\school_book.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\school_book.png" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\solarized_dark.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\solarized_light.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\sunburst.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\tomorrow-night.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\tomorrow.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\vs.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\xcode.css" />
+    <Content Include="Temas\Simply_white\plugins\highlight\styles\zenburn.css" />
+    <Content Include="Temas\Simply_white\plugins\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="Temas\Simply_white\plugins\interactjs\interact.min.js" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.skinNice.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\ion.rangeSlider.skinSimple.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\normalize.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\css\normalize.min.css" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\img\sprite-skin-flat.png" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\img\sprite-skin-modern.png" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\img\sprite-skin-nice.png" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\img\sprite-skin-simple.png" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\js\ion.rangeSlider.js" />
+    <Content Include="Temas\Simply_white\plugins\ion-slider\js\ion.rangeSlider.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-actual\jquery.actual.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-autonumeric\autoNumeric.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-bez\jquery.bez.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-bootgrid\jquery.bootgrid.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-bootgrid\jquery.bootgrid.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\images\filler.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\AutoFill\Readme.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Bootstrap\jquery-datatable-bootstrap.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\images\insert.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\License.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\restore.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\text.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\License.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\License.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\examples\events.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\examples\html.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\KeyTable\Readme.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\License.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\Readme.txt" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\collection.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\index.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\simple.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\collection.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\copy.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\csv.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\pdf.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\print.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\xls.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\css\dataTables.bootstrap.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\css\jquery.dataTables.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\css\jquery.dataTables.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\images\sort_asc.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\images\sort_asc_disabled.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\images\sort_both.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\images\sort_desc.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\images\sort_desc_disabled.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\js\dataTables.bootstrap.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\js\dataTables.bootstrap.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\js\jquery.dataTables.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\js\jquery.dataTables.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\media\js\jquery.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\jquery.dynatree.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin-vista\icons.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin-vista\loading.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin-vista\ui.dynatree.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\icons-rtl.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\icons-rtl.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\icons.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\loading.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\ui.dynatree.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\vline-rtl.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-dynatree\skin\vline.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-inputmask\jquery.inputmask.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ios-list\jquery.ioslist.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-isotope\isotope.pkgd.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-isotope\masonry-horizontal.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-lookingfor\jquery.lookingfor.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-menuclipper\jquery.actual.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-menuclipper\jquery.menuclipper.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-menuclipper\jquery.menuclipper.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-menuclipper\jquery.menuclipper.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\images\1pixel.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\images\metroIcons.jpg" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\images\metroIcons_light.jpg" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\MetroJs.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\MetroJs.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\MetroJs.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-metrojs\MetroJs.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-mousewheel\jquery.mousewheel.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nestable\jquery.nestable.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nestable\jquery.nestable.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nestable\jquery.nestable.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nouislider\jquery.liblink.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nouislider\jquery.nouislider.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-nouislider\jquery.nouislider.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-scrollbar\jquery.scrollbar.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-scrollbar\jquery.scrollbar.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-scrollbar\jquery.scrollbar.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-scrollto\jquery-scrollto.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-slider\jquery.sidr.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-slider\stylesheets\jquery.sidr.dark.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-slider\stylesheets\jquery.sidr.light.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-sparkline\jquery.sparkline.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui-touch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\jquery-ui2.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-ui\jquery-ui_back.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-unevent\jquery.unevent.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-unveil\jquery.unveil.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\additional-methods.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\additional-methods.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\jquery.validate.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\jquery.validate.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ar.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ar.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_bg.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_bg.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ca.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ca.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_cs.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_cs.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_da.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_da.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_de.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_de.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_el.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_el.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_es.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_es.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_es_AR.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_es_AR.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_et.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_et.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_eu.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_eu.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fa.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fa.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fi.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fi.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fr.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_fr.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_gl.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_gl.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_he.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_he.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_hr.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_hr.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_hu.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_hu.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_id.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_id.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_is.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_is.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_it.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_it.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ja.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ja.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ka.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ka.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_kk.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_kk.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ko.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ko.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_lt.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_lt.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_lv.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_lv.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_my.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_my.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_nl.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_nl.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_no.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_no.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pl.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pl.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pt_BR.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pt_BR.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pt_PT.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_pt_PT.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ro.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ro.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ru.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_ru.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_si.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_si.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sk.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sk.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sl.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sl.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sr.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sr.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sr_lat.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sr_lat.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sv.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_sv.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_th.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_th.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_tj.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_tj.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_tr.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_tr.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_uk.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_uk.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_vi.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_vi.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_zh.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_zh.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_zh_TW.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\messages_zh_TW.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_de.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_de.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_es_CL.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_es_CL.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_fi.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_fi.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_nl.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_nl.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_pt.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery-validation\js\localization\methods_pt.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery.sieve.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Temas\Simply_white\plugins\jquery\jquery-easy.js" />
+    <Content Include="Temas\Simply_white\plugins\lodash\lodash.min.js" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\alpha20.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\alpha50.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\arrow-down.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\arrow-up.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\closedhand.cur" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\cross.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\fullscreen-exit.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\fullscreen.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\loader.gif" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\openhand.cur" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\pin-blue.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\pin-green.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\pin-orange.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\pin-purple.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\pin-red.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\target.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\tooltip-triangle.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\images\viewer.png" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\mapplic-ie.css" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\css\mapplic.css" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\js\hammer.min.js" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\js\jquery.mousewheel.js" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\js\mapplic.js" />
+    <Content Include="Temas\Simply_white\plugins\modernizr.custom.js" />
+    <Content Include="Temas\Simply_white\plugins\moment\moment-with-locales.min.js" />
+    <Content Include="Temas\Simply_white\plugins\moment\moment.min.js" />
+    <Content Include="Temas\Simply_white\plugins\noui-slider\jquery.nouislider.css" />
+    <Content Include="Temas\Simply_white\plugins\noui-slider\jquery.nouislider.min.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\cie.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\colorbrewer.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\crossfilter.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\crossfilter.min.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\d3.v2.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\d3.v2.min.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\d3.v3.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\fisheye.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\hive.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\horizon.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\lib\sankey.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\nv.d3.min.css" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\nv.d3.min.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\core.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\interactiveLayer.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\intro.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\axis.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\backup\bullet.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\backup\bulletChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\boilerplate.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\bullet.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\bulletChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\cumulativeLineChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\discreteBar.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\discreteBarChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\distribution.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\historicalBar.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\historicalBarChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\indentedTree.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\legend.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\line.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\lineChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\linePlusBarChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\linePlusBarWithFocusChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\lineWithFisheye.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\lineWithFisheyeChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\lineWithFocusChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBar.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBarChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBarHorizontal.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBarHorizontalChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBarTimeSeries.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiBarTimeSeriesChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\multiChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\ohlcBar.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\parallelCoordinates.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\pie.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\pieChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\scatter.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\scatterChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\scatterPlusLineChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\sparkline.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\sparklinePlus.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\stackedArea.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\models\stackedAreaChart.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\nv.d3.css" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\outro.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\tooltip.js" />
+    <Content Include="Temas\Simply_white\plugins\nvd3\src\utils.js" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\ajax-loader.gif" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.carousel.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.carousel.min.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.theme.default.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.theme.default.min.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.theme.green.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.theme.green.min.css" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\assets\owl.video.play.png" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\owl.carousel.js" />
+    <Content Include="Temas\Simply_white\plugins\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Temas\Simply_white\plugins\pace\pace-theme-flash.css" />
+    <Content Include="Temas\Simply_white\plugins\pace\pace.min.js" />
+    <Content Include="Temas\Simply_white\plugins\popper\umd\popper.min.js" />
+    <Content Include="Temas\Simply_white\plugins\responsive-tabs\jquery.responsive-tabs.min.js" />
+    <Content Include="Temas\Simply_white\plugins\responsive-tabs\responsive-tabs.css" />
+    <Content Include="Temas\Simply_white\plugins\responsive-tabs\responsive-tabs.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\rickshaw.css" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\rickshaw.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\rickshaw.min.css" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\vendor\d3.layout.min.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\vendor\d3.min.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\vendor\d3.v2.js" />
+    <Content Include="Temas\Simply_white\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\css\select2.css" />
+    <Content Include="Temas\Simply_white\plugins\select2\css\select2.min.css" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ar.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\az.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\bg.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ca.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\cs.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\da.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\de.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\el.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\en.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\es.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\et.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\eu.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\fa.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\fi.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\fr.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\gl.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\he.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\hi.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\hr.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\hu.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\hy.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\id.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\is.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\it.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ja.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\km.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ko.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\lt.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\lv.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\mk.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ms.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\nb.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\nl.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\pl.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\pt-BR.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\pt.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ro.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\ru.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\sk.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\sl.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\sr.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\sv.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\th.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\tr.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\uk.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\vi.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\zh-CN.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\i18n\zh-TW.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\select2.full.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\select2.full.min.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\select2.js" />
+    <Content Include="Temas\Simply_white\plugins\select2\js\select2.min.js" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\simple-line-icons.css" />
+    <Content Include="Temas\Simply_white\plugins\skycons\skycons.js" />
+    <Content Include="Temas\Simply_white\plugins\sly.min.js" />
+    <Content Include="Temas\Simply_white\plugins\sly\sly.min.js" />
+    <Content Include="Temas\Simply_white\plugins\summernote\css\summernote-bs2.css" />
+    <Content Include="Temas\Simply_white\plugins\summernote\css\summernote-bs3.css" />
+    <Content Include="Temas\Simply_white\plugins\summernote\css\summernote.css" />
+    <Content Include="Temas\Simply_white\plugins\summernote\js\summernote.js" />
+    <Content Include="Temas\Simply_white\plugins\summernote\js\summernote.min.js" />
+    <Content Include="Temas\Simply_white\plugins\switchery\css\switchery.css" />
+    <Content Include="Temas\Simply_white\plugins\switchery\css\switchery.min.css" />
+    <Content Include="Temas\Simply_white\plugins\switchery\js\switchery.js" />
+    <Content Include="Temas\Simply_white\plugins\switchery\js\switchery.min.js" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-arrows-dark.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-arrows-dark.min.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-arrows.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-arrows.min.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-basic.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether-theme-basic.min.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\css\tether.min.css" />
+    <Content Include="Temas\Simply_white\plugins\tether\js\tether.js" />
+    <Content Include="Temas\Simply_white\plugins\tether\js\tether.min.js" />
+    <Content Include="Temas\Simply_white\plugins\velocity\velocity.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDSH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDSH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDSH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDSH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDSH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cleanliness.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\District.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetUp.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GoToBed.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\House.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Landlord.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LifeStyle.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pet.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Priority.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Property.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Province.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Room.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentCLS.cs" />
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>BDSH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\BDSH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BDSH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BDSH.edmx.diagram">
+      <DependentUpon>BDSH.edmx</DependentUpon>
+    </Content>
+    <Content Include="Temas\Simply_white\js\charts.json" />
+    <Content Include="Temas\Simply_white\js\company_revenue_chart.json" />
+    <Content Include="Temas\Simply_white\js\countries.json" />
+    <Content Include="Temas\Simply_white\js\dashboard-map.json" />
+    <Content Include="Temas\Simply_white\js\data.csv" />
+    <Content Include="Temas\Simply_white\js\emails.json" />
+    <Content Include="Temas\Simply_white\js\min_sales_chart.json" />
+    <Content Include="Temas\Simply_white\js\stocks.json" />
+    <Content Include="Temas\Simply_white\less\style.less" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\bower.json" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\component.json" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\composer.json" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\LICENSE" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\package.json" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\README.md" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\release.sh" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2.jquery.json" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap-select2\select2_locale_en.js.template" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Temas\Simply_white\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\css\stylus\basic.styl" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Temas\Simply_white\plugins\dropzone\images\spritemap%402x.psd" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\feather.js.map" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\feather.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\feather-icons\icons.json" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\animated.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\core.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\icons.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\larger.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\list.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\mixins.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\path.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\spinning.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\stacked.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\less\variables.less" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_animated.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_spinning.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="Temas\Simply_white\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="Temas\Simply_white\plugins\hammer.min.map" />
+    <Content Include="Temas\Simply_white\plugins\interactjs\dist\interact.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColReorder\Readme.md" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\ColVis\Readme.md" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\FixedColumns\Readme.md" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Responsive\Readme.md" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Temas\Simply_white\plugins\jquery-datatable\extensions\TableTools\Readme.md" />
+    <Content Include="Temas\Simply_white\plugins\jquery-slider\component.json" />
+    <Content Include="Temas\Simply_white\plugins\jquery-slider\README.md" />
+    <Content Include="Temas\Simply_white\plugins\mapplic\js\hammer.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\popper\umd\popper.min.js.map" />
+    <Content Include="Temas\Simply_white\plugins\responsive-tabs\README.md" />
+    <Content Include="Temas\Simply_white\plugins\responsive-tabs\responsive-tabs.less" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Temas\Simply_white\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Views\ViewsTemplates\MP_Simply_white.cshtml" />
+    <Content Include="Views\ViewsTemplates\Login_Simply_white.cshtml" />
+    <Content Include="Views\Student\Login.cshtml" />
+    <Content Include="Views\Student\MainPage.cshtml" />
+    <Content Include="Temas\Simply_white\pages\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Temas\Simply_white\pages\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Temas\Simply_white\pages\fonts\pages-icon\Pages-icon.eot" />
+    <Content Include="Temas\Simply_white\pages\fonts\pages-icon\Pages-icon.ttf" />
+    <Content Include="Temas\Simply_white\pages\fonts\pages-icon\Pages-icon.woff" />
+    <Content Include="Temas\Simply_white\pages\less\mixins.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\alerts.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\breadcrumb.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\buttons.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\calendar.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\cards.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\charts.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\chat.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\demo.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\direction.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\email.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\form_elements.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\gallery.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\header.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\horizontal-layout.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\horizontal-menu.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\layout.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\list.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\lock_screen.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\login.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\misc.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\modals.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\nestables.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\notifications.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\overlay-search.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\page-loader.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\pricing.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\print.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\progress_indicators.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\quick-view.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\scroller.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\secondary-sidebar.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\sidebar.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\sliders.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\social.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\split-view.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\tables.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\tabs_accordian.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\timeline.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\treeview.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\typography.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\vector_map.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\view.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\widgets.less" />
+    <Content Include="Temas\Simply_white\pages\less\modules\z_index.less" />
+    <Content Include="Temas\Simply_white\pages\less\pages.less" />
+    <Content Include="Temas\Simply_white\pages\less\responsive.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\abstract\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\abstract\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\calendar\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\calendar\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\corporate\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\corporate\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\default\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\default\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\light\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\light\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\modern\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\modern\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\retro\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\retro\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\simple\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\simple\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\unlax\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\unlax\var.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\vibes\theme.less" />
+    <Content Include="Temas\Simply_white\pages\less\themes\vibes\var.less" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_alerts.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_breadcrumb.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_buttons.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_calendar.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_cards.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_charts.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_chat.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_demo.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_email.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_error.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_form_elements.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_gallery.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_header.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_horizontal-layout.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_horizontal-menu.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_layout.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_list.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_lock_screen.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_login.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_misc.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_modals.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_nestables.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_notifications.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_overlay-search.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_page-loader.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_print.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_progress_indicators.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_quick-view.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_scroller.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_secondary-sidebar.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_sidebar.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_sliders.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_social.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_split-view.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_tables.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_tabs_accordian.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_timeline.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_treeview.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_typography.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_vector_map.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_view.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_widgets.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\modules\_z_index.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\pages.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\abstract\abstract.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\abstract\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\abstract\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\calendar\calendar.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\calendar\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\calendar\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\corporate\corporate.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\corporate\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\corporate\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\light\light.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\light\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\light\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\modern\modern.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\modern\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\modern\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\retro\retro.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\retro\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\retro\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\simple\simple.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\simple\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\simple\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\unlax\unlax.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\unlax\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\unlax\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\vibes\vibes.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\vibes\_custom.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\themes\vibes\_var.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\datatable.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\dynatree.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\iris-slider.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\mapplic.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\ng-tree.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\noui-slider.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\perfect-scroller.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\vendor\quill.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\_color.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\_mixins.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\_modules.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\_responsive.scss" />
+    <Content Include="Temas\Simply_white\pages\scss\_var.scss" />
+    <Content Include="Views\ViewsTemplates\Register_Simply_white.cshtml" />
+    <Content Include="Views\Student\Register.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Temas\Simply_white\plugins\popper\esm\" />
+    <Folder Include="Temas\Simply_white\plugins\retinajs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63865</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63865/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
